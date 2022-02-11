@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <button mat-button (click)="sidenav.toggle()"><mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon></button>
+  <span class="toolbartext">MS APP HUB</span>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav  #sidenav mode="side" opened> 
+    <mat-nav-list class="navlist">
+      <a mat-list-item routerLink="mnymgr" style="display: none;">Money manager</a>
+      <a mat-list-item [routerLink]="['/calc']" [routerLinkActive]="['is-active']">Calculator</a>
+      <a mat-list-item routerLink="notepad" [routerLinkActive]="['is-active']">Notepad</a>
+      <a mat-list-item routerLink="fb" style="display: none;">File Browser</a>
+    </mat-nav-list>     
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <P style="height: 86vh;"><router-outlet></router-outlet></P>
+  </mat-sidenav-content>  
+</mat-sidenav-container>
