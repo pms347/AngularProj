@@ -1,0 +1,17 @@
+<mat-card>
+    <!-- <input type="file" (change)="onChange($event.target.files)"> -->
+    <button mat-button type="file" (click)="fileChangeEvent($event)">Open File</button>
+    <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload"
+        accept="text/*" />
+</mat-card>
+<br>
+<div id="container_np">
+<mat-form-field appearance="fill" style="width: 100%; height: 50%;">
+    <textarea [(ngModel)]="inputstr"  matInput #TextAreaInput></textarea>
+</mat-form-field>
+<mat-card>
+    <button mat-button>Save</button>
+    <button mat-button (click)="copyToClipboard()" [disabled]="!getTextArea()">Copy</button>
+    <button mat-button (click)="TextAreaInput.value=''">Clear All</button>
+</mat-card>
+</div>
